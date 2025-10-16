@@ -1,0 +1,5 @@
+{
+  "name": "AI Testimonial Image Generator",
+  "description": "Generate high-quality, realistic testimonial images by providing a subject, a background scene, and a product image. The AI creates multiple natural variations of a person holding your product.",
+  "requestFramePermissions": []
+}
