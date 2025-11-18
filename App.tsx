@@ -60,13 +60,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 font-sans p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-50 font-sans p-4 sm:p-6 lg:p-8">
       <div className="max-w-6xl mx-auto">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600">
-            AI Testimonial Image Generator
+        <header className="text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+            AI Testimonial Generator
           </h1>
-          <p className="mt-2 text-lg text-slate-400">
+          <p className="mt-3 text-lg text-gray-500 font-light">
             Create stunning, authentic testimonial photos in seconds.
           </p>
         </header>

@@ -32,15 +32,15 @@ export const ImageGrid: React.FC<ImageGridProps> = ({ images, isLoading, error }
   const renderContent = () => {
     if (isLoading) {
       return (
-        <div className="flex flex-col items-center justify-center text-center text-slate-400">
+        <div className="flex flex-col items-center justify-center text-center text-gray-500">
           <Spinner />
-          <p className="mt-4 text-lg font-medium text-cyan-400">{loadingMessages[currentMessageIndex]}</p>
+          <p className="mt-4 text-lg font-medium text-gray-700">{loadingMessages[currentMessageIndex]}</p>
         </div>
       );
     }
     if (error) {
       return (
-        <div className="flex flex-col items-center justify-center text-center text-red-400">
+        <div className="flex flex-col items-center justify-center text-center text-red-600">
           <p className="text-xl font-bold">Generation Failed</p>
           <p className="mt-2">{error}</p>
         </div>
@@ -50,7 +50,7 @@ export const ImageGrid: React.FC<ImageGridProps> = ({ images, isLoading, error }
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {images.map((src, index) => (
-            <div key={index} className="bg-slate-800 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-cyan-500/20">
+            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
               <img src={src} alt={`Generated testimonial ${index + 1}`} className="w-full h-full object-cover" />
             </div>
           ))}
@@ -58,18 +58,18 @@ export const ImageGrid: React.FC<ImageGridProps> = ({ images, isLoading, error }
       );
     }
     return (
-      <div className="flex flex-col items-center justify-center text-center text-slate-500">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-24 h-24 text-slate-700">
+      <div className="flex flex-col items-center justify-center text-center text-gray-400">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-24 h-24 text-gray-200">
           <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
         </svg>
-        <p className="mt-4 text-xl font-semibold">Your generated images will appear here</p>
-        <p className="mt-1 text-slate-400">Fill out the form and click "Generate" to start.</p>
+        <p className="mt-4 text-xl font-semibold text-gray-900">Your generated images will appear here</p>
+        <p className="mt-1 text-gray-500">Fill out the form and click "Generate" to start.</p>
       </div>
     );
   };
 
   return (
-    <div className="bg-slate-800/50 min-h-[600px] w-full p-6 rounded-2xl border border-slate-700 flex items-center justify-center">
+    <div className="bg-white min-h-[600px] w-full p-6 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center">
       {renderContent()}
     </div>
   );

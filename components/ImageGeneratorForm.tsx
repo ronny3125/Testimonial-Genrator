@@ -27,30 +27,30 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
   onSubmit,
 }) => {
   return (
-    <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 shadow-lg sticky top-8">
-      <h2 className="text-2xl font-bold mb-6 text-cyan-400">Customize Your Testimonial</h2>
+    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm sticky top-8">
+      <h2 className="text-xl font-semibold mb-6 text-gray-900">Configuration</h2>
       <form onSubmit={onSubmit} className="space-y-6">
         <div>
-          <label htmlFor="age" className="block text-sm font-medium text-slate-300 mb-2">Subject's Age</label>
+          <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">Subject's Age</label>
           <input
             type="number"
             id="age"
             name="age"
             value={formState.age}
             onChange={onFormChange}
-            className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition"
+            className="w-full bg-white border border-gray-300 rounded-lg py-2.5 px-3 text-gray-900 focus:ring-2 focus:ring-black focus:border-black transition-colors shadow-sm placeholder-gray-400"
             placeholder="e.g., 28"
             required
           />
         </div>
         <div>
-          <label htmlFor="gender" className="block text-sm font-medium text-slate-300 mb-2">Subject's Gender</label>
+          <label htmlFor="gender" className="block text-sm font-medium text-gray-700 mb-2">Subject's Gender</label>
           <select
             id="gender"
             name="gender"
             value={formState.gender}
             onChange={onFormChange}
-            className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition"
+            className="w-full bg-white border border-gray-300 rounded-lg py-2.5 px-3 text-gray-900 focus:ring-2 focus:ring-black focus:border-black transition-colors shadow-sm"
           >
             <option>Female</option>
             <option>Male</option>
@@ -58,39 +58,39 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
           </select>
         </div>
         <div>
-          <label htmlFor="scene" className="block text-sm font-medium text-slate-300 mb-2">Background Scene</label>
+          <label htmlFor="scene" className="block text-sm font-medium text-gray-700 mb-2">Background Scene</label>
           <input
             type="text"
             id="scene"
             name="scene"
             value={formState.scene}
             onChange={onFormChange}
-            className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition"
+            className="w-full bg-white border border-gray-300 rounded-lg py-2.5 px-3 text-gray-900 focus:ring-2 focus:ring-black focus:border-black transition-colors shadow-sm placeholder-gray-400"
             placeholder="e.g., cozy living room"
             required
           />
         </div>
 
         <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Product Image</label>
-            <div className="mt-2 flex justify-center rounded-lg border border-dashed border-slate-600 px-6 py-10 hover:border-cyan-500 transition-colors">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Product Image</label>
+            <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-300 px-6 py-10 hover:border-gray-400 hover:bg-gray-50 transition-all">
                 <div className="text-center">
                     {productImagePreview ? (
-                        <img src={productImagePreview} alt="Product preview" className="mx-auto h-32 w-32 object-contain rounded-md mb-4" />
+                        <img src={productImagePreview} alt="Product preview" className="mx-auto h-32 w-32 object-contain rounded-md mb-4 bg-white p-1 shadow-sm" />
                     ) : (
-                        <UploadIcon className="mx-auto h-12 w-12 text-slate-500" />
+                        <UploadIcon className="mx-auto h-12 w-12 text-gray-400" />
                     )}
-                    <div className="mt-4 flex text-sm leading-6 text-slate-400">
+                    <div className="mt-4 flex text-sm leading-6 text-gray-600 justify-center">
                         <label
                             htmlFor="file-upload"
-                            className="relative cursor-pointer rounded-md font-semibold text-cyan-400 focus-within:outline-none focus-within:ring-2 focus-within:ring-cyan-600 focus-within:ring-offset-2 focus-within:ring-offset-slate-900 hover:text-cyan-300"
+                            className="relative cursor-pointer rounded-md font-semibold text-black focus-within:outline-none focus-within:ring-2 focus-within:ring-black focus-within:ring-offset-2 hover:text-gray-700 hover:underline"
                         >
                             <span>Upload a file</span>
                             <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={onFileChange} accept="image/png, image/jpeg, image/webp" />
                         </label>
                         <p className="pl-1">or drag and drop</p>
                     </div>
-                    <p className="text-xs leading-5 text-slate-500">PNG, JPG, WEBP up to 10MB</p>
+                    <p className="text-xs leading-5 text-gray-500">PNG, JPG, WEBP up to 10MB</p>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full flex justify-center items-center bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:from-cyan-600 hover:to-indigo-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+          className="w-full flex justify-center items-center bg-gray-900 text-white font-semibold py-3 px-4 rounded-lg hover:bg-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
         >
           {isLoading ? 'Generating...' : 'Generate Images'}
         </button>
